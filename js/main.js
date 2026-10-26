@@ -15,6 +15,12 @@
     if (data) el.textContent = data.description;
   });
 
+  var texts = content.text || {};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-text]'), function (el) {
+    var value = texts[el.getAttribute('data-text')];
+    if (value) el.textContent = value;
+  });
+
   if (content.cta) {
     Array.prototype.forEach.call(document.querySelectorAll('[data-cta]'), function (link) {
       link.setAttribute('href', content.cta.target);
