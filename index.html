@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>우리동네 돌봄히어로 · 히어로 선생님 모집</title>
-  <meta name="description" content="서울 강동구 히어로 선생님 모집. 아이를 키운 경험을 새로운 일자리로 이어가세요.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>우리동네 돌봄히어로 · 서울 강동구 히어로 선생님 모집</title>
+  <meta name="description" content="아이를 키운 경험, 새로운 일자리로 이어가세요. 서울 강동구 우리 동네 아이들의 하루를 함께하는 돌봄 선생님(히어로 선생님) 모집 안내와 지원 자격 확인.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -51,9 +51,9 @@
       </h1>
       <p class="hero__desc">
         우리 동네 아이들의 하루를 함께하는<br>
-        돌봄 선생님(히어로 선생님)에 도전하세요.
+        돌봄 선생님에 도전해 보세요.
       </p>
-      <ul class="hero__meta">
+      <ul class="hero__meta" aria-label="모집 대상 요약">
         <li>
           <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="6.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 17.5 C4.5 13 7 11.5 10 11.5 C13 11.5 15.5 13 16.5 17.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
           40~64세 여성
@@ -67,25 +67,26 @@
           강동구 거주
         </li>
       </ul>
-      <a class="btn btn--primary btn--large" href="#apply">
-        지원 자격 확인하고 신청하기
+      <a class="btn btn--primary btn--large" href="#apply" data-cta>
+        <span data-cta-label>지원 자격 확인하고 신청하기</span>
         <span aria-hidden="true">→</span>
       </a>
+      <p class="hero__sub">활동비·교육·가정 매칭 과정 확인</p>
     </div>
 
     <div class="hero__media">
-      <img src="public/images/hero-childcare.png" alt="웃으며 아이들과 이야기하는 돌봄 선생님" width="1536" height="1024">
+      <img src="public/images/hero-childcare.png" alt="공예 활동을 하며 아이들과 웃으며 이야기하는 돌봄 선생님" width="1536" height="1024">
       <svg class="deco deco--heart" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35 C8 27 4 21 4 14 C4 8.5 8.5 5 13 5 C16.5 5 19 7 20 9.5 C21 7 23.5 5 27 5 C31.5 5 36 8.5 36 14 C36 21 32 27 20 35Z" fill="none" stroke="#E9B94C" stroke-width="2.5" stroke-linejoin="round"/></svg>
     </div>
   </section>
 
-  <!-- 혜택 -->
+  <!-- 기본 혜택 4개 -->
   <section class="section benefits" id="benefits">
     <div class="wrap">
       <h2 class="section-title">히어로 선생님이 되면<br>이런 혜택이 있어요</h2>
 
       <ul class="benefit-grid">
-        <li class="benefit-card">
+        <li class="benefit-card" data-benefit="activity-pay">
           <svg class="benefit-card__icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
             <ellipse cx="24" cy="37" rx="14" ry="5"/>
             <path d="M10 37 V32 M38 37 V32"/>
@@ -93,37 +94,50 @@
             <path d="M10 32 V27 M38 32 V27"/>
             <ellipse cx="24" cy="27" rx="14" ry="5"/>
           </svg>
-          <h3 class="benefit-card__title">돌봄 활동으로<br>수입 기회</h3>
-          <p class="benefit-card__desc">활동비 지급<br>(공고별 조건 확인)</p>
+          <h3 class="benefit-card__title">돌봄 활동으로 수입 기회</h3>
+          <p class="benefit-card__desc">활동비와 지급 기준은 모집 공고에서 확인하세요.</p>
         </li>
-        <li class="benefit-card">
+        <li class="benefit-card" data-benefit="professional-training">
           <svg class="benefit-card__icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-            <path d="M24 10 L44 19 L24 28 L4 19 Z"/>
-            <path d="M12 23.5 V32 C12 35 17.5 37 24 37 C30.5 37 36 35 36 32 V23.5"/>
-            <path d="M40 21 V32"/>
+            <path d="M24 14 C20 11 14 11 8 12 V36 C14 35 20 35 24 38 C28 35 34 35 40 36 V12 C34 11 28 11 24 14Z"/>
+            <path d="M24 14 V38"/>
           </svg>
-          <h3 class="benefit-card__title">전문교육 제공</h3>
-          <p class="benefit-card__desc">놀이·돌봄 실무 교육으로<br>바로 활동 가능</p>
+          <h3 class="benefit-card__title">활동 전 전문교육</h3>
+          <p class="benefit-card__desc">돌봄 활동에 필요한 이론과 실무 교육 과정을 안내합니다.</p>
         </li>
-        <li class="benefit-card">
+        <li class="benefit-card" data-benefit="local-matching">
           <svg class="benefit-card__icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
             <path d="M24 44 C24 44 12 31 12 20 A12 12 0 0 1 36 20 C36 31 24 44 24 44Z"/>
             <circle cx="24" cy="20" r="4.5"/>
           </svg>
-          <h3 class="benefit-card__title">우리 동네<br>일자리 매칭</h3>
-          <p class="benefit-card__desc">활동 가능 시간과 지역에<br>맞는 가정 연결</p>
+          <h3 class="benefit-card__title">시간·지역을 고려한 가정 매칭</h3>
+          <p class="benefit-card__desc">활동 가능한 시간과 지역을 고려해 돌봄 가정과의 연결을 지원합니다.</p>
         </li>
-        <li class="benefit-card">
+        <li class="benefit-card" data-benefit="experience-value">
           <svg class="benefit-card__icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 42 V24"/>
-            <path d="M24 26 C24 18 18 14 10 14 C10 22 16 26 24 26Z"/>
-            <path d="M24 24 C24 16 30 10 38 10 C38 18 32 24 24 24Z"/>
-            <path d="M14 42 H34"/>
+            <circle cx="17" cy="15" r="5"/>
+            <path d="M7 36 C7 28 11 24 17 24 C20 24 22 25 23.5 26.5"/>
+            <path d="M33 40 C25 34 22 30.5 22 27 C22 24.2 24.2 22 27 22 C29.2 22 31 23.4 33 25.5 C35 23.4 36.8 22 39 22 C41.8 22 44 24.2 44 27 C44 30.5 41 34 33 40Z"/>
           </svg>
-          <h3 class="benefit-card__title">경험이 강점이 되는 일</h3>
-          <p class="benefit-card__desc">아이를 키운 경험과<br>돌봄 경험을<br>가장 잘 살릴 수 있어요</p>
+          <h3 class="benefit-card__title">양육 경험이 강점이 되는 일</h3>
+          <p class="benefit-card__desc">자녀 양육 경험과 기존 돌봄 경력을 활동의 강점으로 활용해 보세요.</p>
         </li>
       </ul>
+
+      <!-- 다섯 번째 혜택 범주: 시작·추천 캠페인 (js/content.js 설정으로 렌더링) -->
+      <div class="campaign" id="campaign" hidden>
+        <div class="campaign__head">
+          <h3 class="campaign__title" id="campaign-title"></h3>
+        </div>
+        <ul class="campaign__items" aria-labelledby="campaign-title"></ul>
+      </div>
+
+      <div class="section-cta">
+        <a class="btn btn--primary btn--large" href="#apply" data-cta>
+          <span data-cta-label>지원 자격 확인하고 신청하기</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -131,15 +145,20 @@
   <section class="section target" id="target">
     <div class="wrap">
       <div class="target-strip">
-        <div class="target-strip__illust">
-          <img src="public/images/hero-childcare.png" alt="" width="1536" height="1024">
+        <div class="target-strip__illust" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="17" cy="13" r="5"/>
+            <circle cx="33" cy="19" r="3.5"/>
+            <path d="M7 40 C7 29 11 23 17 23 C23 23 27 29 27 40"/>
+            <path d="M26 40 C26 33 29 28 33 28 C37 28 40 33 40 40"/>
+          </svg>
         </div>
         <h2 class="target-strip__title">이런 분께 추천해요</h2>
         <ul class="target-strip__list">
           <li>자녀를 키운 경험을 일로 이어가고 싶으신 분</li>
           <li>아이들과 함께하는 일을 좋아하시는 분</li>
-          <li>퇴직 후 의미 있는 일자리를 찾고 계신 분</li>
-          <li>평일 등·하원 시간대에 꾸준히 활동 가능하신 분</li>
+          <li>재취업 또는 새로운 일자리를 찾고 계신 분</li>
+          <li>평일 등·하원 시간대에 활동 가능한 분</li>
         </ul>
       </div>
     </div>
@@ -173,7 +192,7 @@
             </svg>
           </span>
           <h3 class="process-step__title">2. 면접</h3>
-          <p class="process-step__desc">간단한 면접 진행</p>
+          <p class="process-step__desc">지원 내용과 활동 가능 여부 확인</p>
         </li>
         <li class="process-step__arrow" aria-hidden="true">→</li>
         <li class="process-step">
@@ -184,7 +203,7 @@
             </svg>
           </span>
           <h3 class="process-step__title">3. 전문교육</h3>
-          <p class="process-step__desc">놀이·돌봄 이론 및 실무 교육</p>
+          <p class="process-step__desc">돌봄 이론 및 실무 교육</p>
         </li>
         <li class="process-step__arrow" aria-hidden="true">→</li>
         <li class="process-step">
@@ -195,7 +214,7 @@
             </svg>
           </span>
           <h3 class="process-step__title">4. 가정 매칭</h3>
-          <p class="process-step__desc">시간·지역 맞춤 연결</p>
+          <p class="process-step__desc">활동 시간·지역을 고려한 연결</p>
         </li>
         <li class="process-step__arrow" aria-hidden="true">→</li>
         <li class="process-step">
@@ -205,9 +224,20 @@
             </svg>
           </span>
           <h3 class="process-step__title">5. 돌봄 활동 시작</h3>
-          <p class="process-step__desc">우리 동네 아이들과 함께!</p>
+          <p class="process-step__desc">안내 절차를 거쳐 활동 시작</p>
         </li>
       </ol>
+
+      <div class="edu-row">
+        <img class="edu-row__image" src="public/images/training-session.png" alt="돌봄 전문교육에 참여해 수업을 듣는 중장년 여성 교육생들" width="1536" height="1024" loading="lazy">
+        <div class="edu-row__text">
+          <h3 class="edu-row__title">3단계 · 활동 전 전문교육</h3>
+          <p class="edu-row__desc" data-benefit-desc="professional-training">돌봄 활동에 필요한 이론과 실무 교육 과정을 안내합니다.</p>
+          <p class="edu-row__note">교육 기간·방식·비용 여부와 수료 기준은 모집 회차별 안내를 확인해 주세요.</p>
+        </div>
+      </div>
+
+      <p class="process-note">각 단계는 지원 내용과 모집 회차별 기준에 따라 진행되며, 지원만으로 면접·교육·매칭이 확정되지는 않습니다.</p>
     </div>
   </section>
 
@@ -217,9 +247,9 @@
       <article class="panel panel--message">
         <div class="panel__text">
           <h2 class="panel__title">아이를 키운 경험을<br>새로운 일로 이어가 보세요.</h2>
-          <p class="panel__body">돌봄 활동은 아이와 함께하는 보람 있는 일의 기회가 될 수 있습니다.</p>
+          <p class="panel__body">자녀를 돌보며 쌓은 경험과 돌봄에 대한 관심을 우리 동네 아이들을 위한 활동으로 연결할 수 있습니다.</p>
         </div>
-        <img class="panel__image" src="public/images/training-session.png" alt="교육 과정에 참여해 메모하며 수업을 듣는 참가자들" width="1536" height="1024">
+        <img class="panel__image" src="public/images/hero-childcare.png" alt="" width="1536" height="1024" loading="lazy">
       </article>
 
       <article class="panel panel--apply">
@@ -230,12 +260,12 @@
               <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8 H17 M7 2.5 V5 M13 2.5 V5" stroke="currentColor" stroke-width="1.5"/></svg>
               모집 대상
             </dt>
-            <dd>강동구 거주 40~64세 여성</dd>
+            <dd>강동구 거주 40~64세 여성<span class="apply-info__note">(과제용 타깃)</span></dd>
           </div>
           <div>
             <dt>
               <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="6.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 17.5 C4.5 13 7 11.5 10 11.5 C13 11.5 15.5 13 16.5 17.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-              우대 조건
+              관련 경험
             </dt>
             <dd>자녀 양육 경험 또는 유아 돌봄 경력</dd>
           </div>
@@ -244,75 +274,114 @@
               <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 6 V10 L13 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
               활동 시간
             </dt>
-            <dd>평일 등·하원 시간대(협의 가능)</dd>
+            <dd>평일 등·하원 시간대 활동 가능 여부 확인</dd>
           </div>
         </dl>
-        <a class="btn btn--primary btn--large btn--block" href="#apply">
-          지원 자격 확인하고 신청하기
+        <a class="btn btn--primary btn--large btn--block" href="#apply" data-cta>
+          <span data-cta-label>지원 자격 확인하고 신청하기</span>
           <span aria-hidden="true">→</span>
         </a>
       </article>
     </div>
   </section>
 
+  <!-- 자주 묻는 질문 -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-wrap">
+      <h2 class="section-title section-title--sm">자주 묻는 질문</h2>
+      <div class="faq__list">
+        <div class="faq__item">
+          <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">자녀 양육 경험만 있어도 지원할 수 있나요?</button></h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            <p>자녀 양육 경험 또는 유아 돌봄 경력이 있는 분을 대상으로 안내하고 있습니다. 경험만으로 선발이 확정되지는 않으며, 면접과 교육 등 모집 회차별 절차를 거칩니다. 세부 자격은 모집 공고를 확인해 주세요.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">활동비는 어떻게 지급되나요?</button></h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            <p>활동비와 지급 기준은 모집 회차별로 다릅니다. 모집 회차별 안내를 확인해 주세요.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">활동 시간과 지역은 어떻게 정해지나요?</button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            <p>지원서에 적어 주신 활동 가능 시간과 거주 지역을 고려해 돌봄 가정과의 연결을 지원합니다. 원하는 시간과 지역의 배정이 보장되는 것은 아닙니다.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">교육은 어떤 방식으로 진행되나요?</button></h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            <p>활동 전 돌봄 이론과 실무 교육을 안내합니다. 교육 기간, 방식, 비용 여부와 수료 요건은 모집 회차별 안내를 확인해 주세요.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">지원 후에는 어떤 절차를 거치나요?</button></h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            <p>온라인 지원서 제출 후 면접, 전문교육, 가정 매칭을 거쳐 돌봄 활동을 시작합니다. 각 단계는 지원 내용과 모집 회차별 기준에 따라 진행됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 신청 폼 -->
   <section class="section apply" id="apply">
     <div class="wrap apply-wrap">
-      <h2 class="section-title section-title--sm">온라인 지원서</h2>
-      <p class="apply-lead">모집 대상(강동구 거주 40~64세 여성)에 해당하는지 확인하고 아래 내용을 입력해 주세요.</p>
+      <h2 class="section-title section-title--sm">지원 자격 확인 및 신청</h2>
+      <ul class="apply-check">
+        <li>강동구 거주 40~64세 여성</li>
+        <li>자녀 양육 경험 또는 유아 돌봄 경력</li>
+        <li>평일 등·하원 시간대 활동 가능</li>
+      </ul>
 
       <form class="apply-form" id="apply-form" novalidate>
         <div class="field">
           <label for="name">이름 <span class="req" aria-hidden="true">*</span></label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-          <p class="field__error" data-error-for="name" aria-live="polite"></p>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+          <p class="field__error" id="name-error" data-error-for="name" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="phone">연락처 <span class="req" aria-hidden="true">*</span></label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000" required>
-          <p class="field__error" data-error-for="phone" aria-live="polite"></p>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000" required aria-describedby="phone-error">
+          <p class="field__error" id="phone-error" data-error-for="phone" aria-live="polite"></p>
         </div>
 
         <div class="field">
-          <label for="district">거주 지역 <span class="req" aria-hidden="true">*</span></label>
-          <select id="district" name="district" required>
-            <option value="">선택해 주세요</option>
-            <option value="gangdong">강동구</option>
-            <option value="other">강동구 외 지역</option>
-          </select>
-          <p class="field__error" data-error-for="district" aria-live="polite"></p>
+          <label for="district">거주 지역(시·구) <span class="req" aria-hidden="true">*</span></label>
+          <input id="district" name="district" type="text" autocomplete="address-level2" placeholder="예: 서울시 강동구" required aria-describedby="district-error">
+          <p class="field__error" id="district-error" data-error-for="district" aria-live="polite"></p>
         </div>
 
         <div class="field">
-          <label for="experience">돌봄/양육 경험 <span class="req" aria-hidden="true">*</span></label>
-          <select id="experience" name="experience" required>
+          <label for="experience">자녀 양육 또는 아동 돌봄 경험 <span class="req" aria-hidden="true">*</span></label>
+          <select id="experience" name="experience" required aria-describedby="experience-error">
             <option value="">선택해 주세요</option>
-            <option value="parenting">자녀 양육 경험</option>
-            <option value="care">유아 돌봄 경력</option>
-            <option value="both">양육 경험과 돌봄 경력 모두</option>
-            <option value="none">해당 없음</option>
+            <option value="parenting">자녀 양육 경험 있음</option>
+            <option value="care">아동 돌봄 경력 있음</option>
+            <option value="both">양육 경험과 돌봄 경력 모두 있음</option>
+            <option value="none">해당 경험 없음</option>
           </select>
-          <p class="field__error" data-error-for="experience" aria-live="polite"></p>
+          <p class="field__error" id="experience-error" data-error-for="experience" aria-live="polite"></p>
         </div>
 
-        <fieldset class="field field--full">
-          <legend>활동 가능 시간대 <span class="req" aria-hidden="true">*</span></legend>
+        <fieldset class="field field--full" aria-describedby="time-error">
+          <legend>평일 활동 가능 시간대 <span class="req" aria-hidden="true">*</span></legend>
           <div class="checks">
-            <label><input type="checkbox" name="time" value="morning-weekday"> 평일 등원 시간대</label>
-            <label><input type="checkbox" name="time" value="afternoon-weekday"> 평일 하원 시간대</label>
+            <label><input type="checkbox" name="time" value="morning"> 등원 시간대(오전)</label>
+            <label><input type="checkbox" name="time" value="afternoon"> 하원 시간대(오후)</label>
             <label><input type="checkbox" name="time" value="flexible"> 협의 가능</label>
           </div>
-          <p class="field__error" data-error-for="time" aria-live="polite"></p>
+          <p class="field__error" id="time-error" data-error-for="time" aria-live="polite"></p>
         </fieldset>
 
         <div class="field field--full">
           <label class="consent">
-            <input type="checkbox" name="consent" required>
-            <span>개인정보 수집·이용에 동의합니다. <span class="req" aria-hidden="true">*</span></span>
+            <input type="checkbox" name="consent" required aria-describedby="consent-hint consent-error">
+            <span>[필수] 개인정보 수집·이용에 동의합니다.</span>
           </label>
-          <p class="field__hint">수집 항목: 이름, 연락처, 거주 지역, 경험, 활동 가능 시간대 / 보유 기간: 모집 종료 시까지</p>
-          <p class="field__error" data-error-for="consent" aria-live="polite"></p>
+          <p class="field__hint" id="consent-hint">수집 항목: 이름, 연락처, 거주 지역, 경험 여부, 활동 가능 시간대 / 이용 목적: 지원 자격 확인 및 연락 / 보유 기간: 모집 종료 시까지</p>
+          <p class="field__error" id="consent-error" data-error-for="consent" aria-live="polite"></p>
         </div>
 
         <div class="field field--full form-actions">
@@ -322,27 +391,15 @@
       </form>
     </div>
   </section>
-
-  <!-- 자주 묻는 질문 -->
-  <section class="section faq" id="faq">
-    <div class="wrap faq-wrap">
-      <h2 class="section-title section-title--sm">자주 묻는 질문</h2>
-      <details class="faq__item">
-        <summary>지원 자격은 어떻게 되나요?</summary>
-        <p>강동구에 거주하는 40~64세 여성을 대상으로 합니다. 자녀 양육 경험 또는 유아 돌봄 경력이 있으면 우대합니다.</p>
-      </details>
-      <details class="faq__item">
-        <summary>활동비는 얼마인가요?</summary>
-        <p>활동비는 공고별로 조건이 다릅니다. 지원 전에 해당 공고의 조건을 확인해 주세요.</p>
-      </details>
-      <details class="faq__item">
-        <summary>활동 시간은 어떻게 되나요?</summary>
-        <p>평일 등·하원 시간대에 활동합니다. 세부 시간은 가정과 협의해 정할 수 있습니다.</p>
-      </details>
-    </div>
-  </section>
 </main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <p>우리동네 돌봄히어로 · 히어로 선생님 모집 안내 (프로토타입)</p>
+  </div>
+</footer>
+
+<script src="js/content.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
