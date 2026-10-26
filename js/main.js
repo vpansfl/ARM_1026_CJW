@@ -1,6 +1,24 @@
 (function () {
   var content = window.SITE_CONTENT || {};
 
+  // Amplitude가 로드되지 않은 환경(로컬 파일, 차단 등)에서도 페이지는 그대로 동작한다.
+  // 이름·연락처 등 입력값은 보내지 않는다.
+  function track(name, props) {
+    try {
+      if (window.amplitude && window.amplitude.track) window.amplitude.track(name, props || {});
+    } catch (e) {}
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#apply"]'), function (link) {
+    link.addEventListener('click', function () {
+      var section = link.closest('header') ? null : link.closest('section');
+      var location = link.closest('header') ? 'header'
+        : section && section.id ? section.id
+        : link.closest('.panel') ? 'apply-panel' : 'other';
+      track('CTA Clicked', { location: location });
+    });
+  });
+
   // ---------- 콘텐츠 설정 적용 (js/content.js가 단일 원본) ----------
   var benefits = content.coreBenefits || {};
   Array.prototype.forEach.call(document.querySelectorAll('[data-benefit]'), function (card) {
@@ -106,6 +124,7 @@
       var expanded = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!expanded));
       if (panel) panel.hidden = expanded;
+      if (!expanded) track('FAQ Opened', { question: button.textContent.trim() });
     });
   });
 
@@ -115,6 +134,13 @@
 
   var phonePattern = /^01[016789]-?\d{3,4}-?\d{4}$/;
   var status = form.querySelector('.form-status');
+
+  var started = false;
+  form.addEventListener('focusin', function () {
+    if (started) return;
+    started = true;
+    track('Form Started');
+  });
 
   function setError(name, message) {
     var field = form.querySelector('[data-error-for="' + name + '"]');
@@ -166,10 +192,22 @@
     status.textContent = '';
 
     if (!validate()) {
+      var invalid = Array.prototype.map.call(form.querySelectorAll('[data-error-for]'), function (el) {
+        return el.textContent ? el.getAttribute('data-error-for') : '';
+      }).filter(Boolean);
+      track('Form Submit Failed', { error_fields: invalid, error_count: invalid.length });
       var firstError = form.querySelector('.is-invalid input, .is-invalid select');
       if (firstError) firstError.focus();
       return;
     }
+
+    var data = new FormData(form);
+    track('Form Submitted', {
+      experience: data.get('experience'),
+      time_slots: data.getAll('time'),
+      training: data.get('training') || 'earliest',
+      has_referrer: Boolean(String(data.get('referrer') || '').trim())
+    });
 
     // 백엔드가 없으므로 입력값을 전송하거나 저장하지 않는다.
     status.textContent = '';
