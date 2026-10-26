@@ -603,6 +603,89 @@ select {
   color: var(--color-muted);
 }
 
+.edu-row__note strong {
+  margin-right: 6px;
+  color: var(--color-text);
+}
+
+/* ---------- 하는 일 ---------- */
+.work-row {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 18px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.work-row__title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.work-row__desc {
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.work-row__desc strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* ---------- 신뢰 근거 ---------- */
+.trust__awards {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.trust__chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.trust__chips li {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.trust__stat {
+  margin-top: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.trust__stat strong {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.trust__partners {
+  margin: 18px auto 0;
+  max-width: 640px;
+  text-align: center;
+}
+
+.trust__partners img {
+  width: 100%;
+  height: auto;
+}
+
+.trust__partners figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
 .process-note {
   margin-top: 22px;
   font-size: 13px;
@@ -660,6 +743,35 @@ select {
   height: 100%;
   object-fit: cover;
   object-position: 40% 20%;
+}
+
+.panel__image--portrait {
+  object-position: center 12%;
+}
+
+.testimonial {
+  margin: 0;
+}
+
+.testimonial blockquote {
+  margin: 0;
+}
+
+.testimonial figcaption {
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.testimonial__name {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.testimonial__source {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 .panel--apply {
@@ -927,6 +1039,22 @@ select {
   color: var(--color-muted);
 }
 
+.site-footer p + p {
+  margin-top: 4px;
+}
+
+.site-footer a,
+.form-status a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.apply-lead {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
 .faq__q:focus-visible,
 .btn:focus-visible,
 .site-nav a:focus-visible,
@@ -1134,6 +1262,12 @@ select {
     gap: 14px;
   }
 
+  .work-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 20px;
+  }
+
   .target-strip__title {
     white-space: normal;
   }
@@ -1161,6 +1295,17 @@ select {
 
   .apply-form {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 반응형: 599px 이하 — 인증 배지 띠는 글자가 작아지므로 텍스트로 대체 ---------- */
+@media (max-width: 599px) {
+  .trust__awards {
+    display: none;
+  }
+
+  .trust__chips {
+    display: flex;
   }
 }
 

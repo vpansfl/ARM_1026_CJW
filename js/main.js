@@ -139,10 +139,10 @@
         return phonePattern.test(value) ? '' : '휴대폰 번호 형식으로 입력해 주세요. (예: 010-0000-0000)';
       },
       district: function () {
-        return String(data.get('district') || '').trim() ? '' : '거주 지역(시·구)을 입력해 주세요.';
+        return String(data.get('district') || '').trim() ? '' : '거주 동네를 입력해 주세요. (예: 강동구 천호동)';
       },
       experience: function () {
-        return data.get('experience') ? '' : '자녀 양육 또는 아동 돌봄 경험 여부를 선택해 주세요.';
+        return data.get('experience') ? '' : '육아·돌봄 경험을 선택해 주세요.';
       },
       time: function () {
         return data.getAll('time').length ? '' : '평일 활동 가능 시간대를 하나 이상 선택해 주세요.';
@@ -172,6 +172,14 @@
     }
 
     // 백엔드가 없으므로 입력값을 전송하거나 저장하지 않는다.
-    status.textContent = '프로토타입에서는 실제 지원서가 접수·저장되지 않습니다.';
+    status.textContent = '';
+    status.appendChild(document.createTextNode('프로토타입에서는 실제 지원서가 접수·저장되지 않습니다. 실제 지원은 '));
+    var link = document.createElement('a');
+    link.href = (content.project && content.project.officialSite) || 'https://woorihero.com/hero/about';
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = '공식 홈페이지';
+    status.appendChild(link);
+    status.appendChild(document.createTextNode('에서 할 수 있어요.'));
   });
 })();
